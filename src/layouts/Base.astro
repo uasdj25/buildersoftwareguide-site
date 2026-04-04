@@ -23,13 +23,13 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
     :root {
       --font: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
       --c-bg:       #FFFFFF;
-      --c-surface:  #F9FAFB;
-      --c-text:     #111827;
-      --c-muted:    #6B7280;
-      --c-border:   #E5E7EB;
-      --c-accent:   #2563EB;
-      --c-accent-d: #1D4ED8;
-      --c-accent-lt:#EFF6FF;
+      --c-surface:  #FAFAF8;
+      --c-text:     #1C1917;
+      --c-muted:    #78716C;
+      --c-border:   #E7E5E4;
+      --c-accent:   #B45309;
+      --c-accent-d: #92400E;
+      --c-accent-lt:#FEF3C7;
       --max-w:      1100px;
       --px:         clamp(1.25rem, 4vw, 2.5rem);
     }
@@ -58,9 +58,9 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
       display: flex; align-items: center; justify-content: space-between;
       gap: 1.5rem;
     }
-    .nav-brand { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.03em; color: var(--c-text); }
+    .nav-brand { font-weight: 700; font-size: 1.125rem; letter-spacing: -0.03em; color: var(--c-text); }
     .nav-brand span { color: var(--c-accent); }
-    .nav-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 500; color: var(--c-muted); }
+    .nav-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 600; color: var(--c-muted); }
     .nav-links a:hover { color: var(--c-text); }
     .nav-cta {
       background: var(--c-accent); color: white;
@@ -84,7 +84,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
     .prose hr { border: none; border-top: 1px solid var(--c-border); margin: 2rem 0; }
     .prose blockquote { border-left: 3px solid var(--c-accent); padding-left: 1.25rem; margin: 1.5rem 0; background: var(--c-accent-lt); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; }
     .prose blockquote p { font-style: italic; color: var(--c-text); margin-bottom: 0; }
-    .prose a { color: var(--c-accent); text-decoration: underline; text-decoration-color: #BFDBFE; }
+    .prose a { color: var(--c-accent); text-decoration: underline; text-decoration-color: #FCD34D; }
     .prose a:hover { text-decoration-color: var(--c-accent); }
 
     /* Tables */
@@ -124,7 +124,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
     /* CTA Box */
     .cta-box {
       background: var(--c-accent-lt);
-      border: 1px solid #BFDBFE;
+      border: 1px solid #FCD34D;
       border-radius: 10px;
       padding: 1.75rem 2rem;
       margin: 2rem 0;
@@ -163,17 +163,17 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 
     /* Footer */
     footer {
-      background: var(--c-text);
+      background: #1C1917;
       padding: 2.5rem var(--px);
     }
     .footer-inner {
       max-width: var(--max-w); margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 1rem;
-      font-size: 0.875rem; color: #9CA3AF;
+      font-size: 0.875rem; color: #A8A29E;
     }
     .footer-brand { font-weight: 700; font-size: 1rem; color: white; letter-spacing: -0.02em; }
-    .footer-brand span { color: #60A5FA; }
+    .footer-brand span { color: #F59E0B; }
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a:hover { color: white; }
 
