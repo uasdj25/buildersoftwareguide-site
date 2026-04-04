@@ -1,0 +1,236 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="BuilderSoftwareGuide — Construction & Contractor Software Reviews"
+  description="Independent reviews and comparisons of construction project management software. Real pricing, honest recommendations for general contractors, homebuilders, and remodelers."
+>
+  <style>
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1E3A5F 0%, #1D4ED8 100%);
+      padding: 5rem var(--px) 5rem;
+      color: white;
+    }
+    .hero-inner { max-width: var(--max-w); margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.15); color: #BFDBFE;
+      font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em;
+      padding: 0.375rem 0.875rem; border-radius: 999px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;
+      max-width: 22ch; color: white; margin-bottom: 1.25rem;
+    }
+    .hero p {
+      font-size: 1.125rem; color: #BFDBFE;
+      max-width: 54ch; line-height: 1.7; margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-trust {
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .trust-item { font-size: 0.875rem; color: #93C5FD; }
+    .trust-item strong { display: block; color: white; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; }
+
+    /* Sections */
+    .section { padding: 5rem var(--px); }
+    .section--surface { background: var(--c-surface); }
+    .section-inner { max-width: var(--max-w); margin: 0 auto; }
+    .section-label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--c-accent); margin-bottom: 0.75rem;
+    }
+    .section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
+      letter-spacing: -0.025em; margin-bottom: 0.75rem; color: var(--c-text);
+    }
+    .section-sub { font-size: 1rem; color: var(--c-muted); max-width: 56ch; margin-bottom: 2.5rem; line-height: 1.7; }
+
+    /* Category cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--c-bg); border: 1px solid var(--c-border);
+      border-radius: 10px; padding: 1.5rem;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #BFDBFE; }
+    .card-icon {
+      width: 2.5rem; height: 2.5rem; background: var(--c-accent-lt);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; margin-bottom: 1rem;
+    }
+    .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; color: var(--c-text); }
+    .card p { font-size: 0.9rem; color: var(--c-muted); line-height: 1.65; margin-bottom: 1rem; }
+    .card-link { font-size: 0.875rem; font-weight: 600; color: var(--c-accent); display: flex; align-items: center; gap: 0.25rem; }
+
+    /* Compare rows */
+    .compare-list { display: flex; flex-direction: column; border: 1px solid var(--c-border); border-radius: 10px; overflow: hidden; }
+    .compare-item {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 2rem; padding: 1.25rem 1.5rem;
+      align-items: center; border-bottom: 1px solid var(--c-border);
+      background: var(--c-bg);
+    }
+    .compare-item:last-child { border-bottom: none; }
+    .compare-item:hover { background: var(--c-surface); }
+    .compare-title { font-size: 1rem; font-weight: 700; color: var(--c-text); margin-bottom: 0.25rem; }
+    .compare-desc { font-size: 0.875rem; color: var(--c-muted); }
+    .compare-arrow { color: var(--c-accent); font-size: 1.25rem; }
+
+    /* About strip */
+    .about-strip {
+      background: var(--c-text); color: white;
+      padding: 3.5rem var(--px);
+    }
+    .about-strip-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-strip h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .about-strip p { font-size: 0.9375rem; color: #D1D5DB; line-height: 1.75; }
+    .about-pillars { display: flex; flex-direction: column; gap: 1rem; }
+    .pillar { display: flex; gap: 0.875rem; align-items: flex-start; }
+    .pillar-dot { width: 8px; height: 8px; background: #60A5FA; border-radius: 50%; margin-top: 0.4rem; flex-shrink: 0; }
+    .pillar p { font-size: 0.9rem; color: #D1D5DB; margin: 0; line-height: 1.6; }
+    .pillar strong { color: white; }
+
+    /* Cross-link banner */
+    .crosslink {
+      background: var(--c-accent-lt); border: 1px solid #BFDBFE;
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      margin-top: 2rem;
+    }
+    .crosslink p { font-size: 0.9375rem; color: var(--c-text); margin: 0; }
+    .crosslink a { color: var(--c-accent); font-weight: 600; text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .about-strip-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-trust { gap: 1.5rem; }
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">🏗️ Independent Reviews</div>
+      <h1>Find the right software for your construction business.</h1>
+      <p>Real pricing, honest comparisons, no sponsored rankings. We help general contractors, homebuilders, and remodelers choose construction software that actually fits their workflow.</p>
+      <div class="hero-actions">
+        <a href="/best-software/best-construction-project-management-software" class="btn btn-white">Best Construction PM Software</a>
+        <a href="/compare/buildertrend-vs-procore" class="btn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3);">Buildertrend vs Procore →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>5+</strong> Software reviewed</div>
+        <div class="trust-item"><strong>Real</strong> Pricing data</div>
+        <div class="trust-item"><strong>0</strong> Paid rankings</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Browse by Category</div>
+      <h2>Find software for your type of construction business</h2>
+      <p class="section-sub">Whether you're a residential homebuilder, remodeling contractor, or commercial GC — different operations need different tools.</p>
+      <div class="card-grid">
+        <a href="/best-software/best-construction-project-management-software" class="card">
+          <div class="card-icon">📋</div>
+          <h3>Best Construction PM Software</h3>
+          <p>Schedules, budgets, subcontractors, and client communication — all in one platform. Covers Buildertrend, Procore, JobTread.</p>
+          <span class="card-link">Read guide →</span>
+        </a>
+        <a href="/best-software/best-general-contractor-software" class="card">
+          <div class="card-icon">🏗️</div>
+          <h3>Best General Contractor Software</h3>
+          <p>From RFIs and submittals to punch lists and closeout. Software built for the GC's job site reality.</p>
+          <span class="card-link">Read guide →</span>
+        </a>
+        <a href="/best-software/best-construction-estimating-software" class="card">
+          <div class="card-icon">🧮</div>
+          <h3>Best Construction Estimating Software</h3>
+          <p>Win more bids with faster, more accurate estimates. Covers takeoff, pricing databases, and proposal tools.</p>
+          <span class="card-link">Read guide →</span>
+        </a>
+        <a href="/best-software/best-homebuilder-software" class="card">
+          <div class="card-icon">🏠</div>
+          <h3>Best Homebuilder Software</h3>
+          <p>Custom home and production builder tools: selections, change orders, warranty, and owner portals.</p>
+          <span class="card-link">Read guide →</span>
+        </a>
+        <a href="/best-software/best-remodeling-contractor-software" class="card">
+          <div class="card-icon">🔨</div>
+          <h3>Best Remodeling Contractor Software</h3>
+          <p>Kitchen, bath, and whole-home remodelers need design integration, lead management, and job tracking.</p>
+          <span class="card-link">Read guide →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISONS -->
+  <section class="section section--surface">
+    <div class="section-inner">
+      <div class="section-label">Head-to-Head</div>
+      <h2>The most-searched comparisons</h2>
+      <p class="section-sub">Side-by-side breakdowns of the platforms construction pros compare most before buying.</p>
+      <div class="compare-list">
+        <a href="/compare/buildertrend-vs-procore" class="compare-item">
+          <div>
+            <div class="compare-title">Buildertrend vs Procore</div>
+            <div class="compare-desc">The two biggest names in construction software — one built for builders, one for enterprise GCs.</div>
+          </div>
+          <span class="compare-arrow">→</span>
+        </a>
+        <a href="/compare/buildertrend-vs-houzz-pro" class="compare-item">
+          <div>
+            <div class="compare-title">Buildertrend vs Houzz Pro</div>
+            <div class="compare-desc">Remodelers trying to decide between the market leader and the design-forward alternative.</div>
+          </div>
+          <span class="compare-arrow">→</span>
+        </a>
+        <a href="/compare/procore-vs-fieldwire" class="compare-item">
+          <div>
+            <div class="compare-title">Procore vs Fieldwire</div>
+            <div class="compare-desc">Enterprise platform vs. lean field management tool — when does Procore's cost make sense?</div>
+          </div>
+          <span class="compare-arrow">→</span>
+        </a>
+        <a href="/reviews/buildertrend-review" class="compare-item">
+          <div>
+            <div class="compare-title">Buildertrend Review</div>
+            <div class="compare-desc">Full pricing, features, pros/cons, and who it's actually built for.</div>
+          </div>
+          <span class="compare-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="crosslink">
+        <span style="font-size:1.5rem;">🔧</span>
+        <p>Running a trade business (HVAC, plumbing, electrical)? Check out our sister site <a href="https://www.tradesoftwareguide.com" target="_blank" rel="noopener">TradeSoftwareGuide.com</a> for field service software reviews.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="about-strip-inner">
+      <div>
+        <h2>Independent. Honest. Built for builders.</h2>
+        <p>BuilderSoftwareGuide isn't a software vendor or an agency. We research, evaluate, and publish honest assessments so construction pros can make informed decisions without sitting through sales demos.</p>
+      </div>
+      <div class="about-pillars">
+        <div class="pillar"><div class="pillar-dot"></div><p><strong>Real pricing from vendor sites</strong> — not estimates or outdated figures.</p></div>
+        <div class="pillar"><div class="pillar-dot"></div><p><strong>No paid placements</strong> — rankings are based on fit, not who pays us more.</p></div>
+        <div class="pillar"><div class="pillar-dot"></div><p><strong>Affiliate commissions disclosed</strong> — we earn when you sign up, it doesn't change our recommendations.</p></div>
+      </div>
+    </div>
+  </section>
+
+</Base>
