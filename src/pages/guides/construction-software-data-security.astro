@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Construction Software Data Security 2026 — BuilderSoftwareGuide"
+  description="How to evaluate construction software security: data encryption, access controls, cloud hosting, backup policies, and what to ask vendors before signing up."
+>
+  <div class="page-header">
+    <div class="container">
+      <div class="prose">
+        <div class="meta">Guide</div>
+        <h1>Construction Software Data Security</h1>
+        <p>Your project data — contracts, drawings, financial records, client information — lives in your construction software. Here's what to look for and what questions to ask.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="prose">
+
+        <div class="verdict">✓ Updated April 2026</div>
+
+        <p>Construction companies store sensitive information in their project management software: contract values, homeowner personal data, financial records, architectural drawings, and sub and supplier relationships. A data breach or a vendor going out of business isn't just a technology inconvenience — it can disrupt active projects, expose client information, and create legal liability.</p>
+
+        <p>Most contractors don't evaluate security when choosing software. This guide covers the questions worth asking before committing your business data to any cloud platform.</p>
+
+        <h2>Why construction software security matters</h2>
+
+        <h3>What's at risk</h3>
+        <ul>
+          <li><strong>Client data:</strong> Homeowner names, addresses, email, and sometimes financial information (bank accounts for ACH payments)</li>
+          <li><strong>Contract values and financial records:</strong> Competitive bid information and financial performance data</li>
+          <li><strong>Architectural and engineering drawings:</strong> Proprietary design files often representing significant intellectual property</li>
+          <li><strong>Employee data:</strong> Payroll information, Social Security numbers, wages</li>
+          <li><strong>Business relationships:</strong> Sub and supplier contact information, pricing, and performance data</li>
+        </ul>
+
+        <h3>Threat types for construction businesses</h3>
+        <ul>
+          <li><strong>Ransomware:</strong> Increasingly common in construction. Attackers encrypt your data and demand payment to restore access. Contractors who store everything locally on a server are particularly vulnerable.</li>
+          <li><strong>Business email compromise:</strong> Attackers spoof vendor or sub emails and redirect payments to fraudulent accounts. Payment workflow software with strong authentication reduces this risk.</li>
+          <li><strong>Vendor failure:</strong> If your software provider goes out of business or shuts down a product, you need access to your data. Understand data portability and export options before signing.</li>
+          <li><strong>Unauthorized access:</strong> Employees, former employees, or external parties accessing project data they shouldn't have.</li>
+        </ul>
+
+        <h2>Key security features to evaluate</h2>
+
+        <h3>Encryption</h3>
+        <p>All reputable cloud construction software should encrypt data both in transit (data moving between your browser/app and the server) and at rest (data stored on servers). Look for TLS 1.2 or higher for in-transit encryption and AES-256 for at-rest encryption. This should be standard — if a vendor can't confirm it, look elsewhere.</p>
+
+        <h3>Access controls and permissions</h3>
+        <p>Can you control who sees what? Good construction software lets you define granular user permissions — your foreman can log daily reports and time but can't see financial data; your estimator can access bids but not payroll. Role-based access controls prevent sensitive information from being visible to employees who don't need it.</p>
+
+        <p>Check specifically for:</p>
+        <ul>
+          <li>Project-level access controls (can you limit users to specific projects?)</li>
+          <li>Financial data visibility restrictions</li>
+          <li>External user access for clients and subcontractors (can they only see what you share?)</li>
+          <li>Admin controls for adding and removing users quickly when employees leave</li>
+        </ul>
+
+        <h3>Multi-factor authentication (MFA)</h3>
+        <p>MFA requires a second verification step (a phone code, authenticator app, or hardware key) in addition to a password. It dramatically reduces the risk of account compromise even if a password is stolen. Look for platforms that offer MFA — ideally where you can require it for all users, not just make it optional.</p>
+
+        <h3>Data backup and recovery</h3>
+        <p>How often is your data backed up? How quickly can it be restored if something goes wrong? Ask vendors specifically:</p>
+        <ul>
+          <li>How frequently are backups performed? (At least daily; hourly is better)</li>
+          <li>How long are backups retained?</li>
+          <li>What's the recovery time objective (RTO) if data is lost?</li>
+          <li>Are backups stored separately from primary servers (geographically redundant)?</li>
+        </ul>
+
+        <h3>Data portability and export</h3>
+        <p>Before you sign a long-term contract, understand how you'd get your data out if you need to leave. Can you export project data, financial records, and documents in usable formats? What happens to your data if the vendor shuts down? This is often overlooked until it's too late.</p>
+
+        <h3>SOC 2 compliance</h3>
+        <p>SOC 2 (Service Organization Control 2) is an independent audit of a software company's security, availability, processing integrity, confidentiality, and privacy controls. Enterprise construction platforms (Procore, Autodesk Build, Buildertrend) typically maintain SOC 2 Type II certification, which means their security controls are audited annually. Smaller platforms may not have this certification — it's not automatically a disqualifier, but it's worth asking about.</p>
+
+        <h2>Vendor-specific considerations</h2>
+
+        <h3>Procore</h3>
+        <p>SOC 2 Type II certified. Strong role-based permissions with granular project-level controls. Excellent for enterprise security requirements. Enterprise tier includes SSO (Single Sign-On) integration with corporate identity providers.</p>
+
+        <h3>Buildertrend</h3>
+        <p>Cloud-hosted on AWS with standard encryption. Role-based permissions allow admin control over what each user sees. MFA available. Good for small to mid-size residential contractors who need solid baseline security without enterprise complexity.</p>
+
+        <h3>Autodesk Build / Autodesk Construction Cloud</h3>
+        <p>Enterprise-grade security with SOC 2 certification. Part of Autodesk's broader cloud infrastructure with significant security investment. Strong for large commercial GCs with enterprise security requirements.</p>
+
+        <h3>Smaller platforms</h3>
+        <p>Platforms like Contractor Foreman, JobTread, and Knowify are smaller vendors. They may have adequate security for small to mid-size contractors, but their security documentation and certifications are less comprehensive than enterprise platforms. Ask specifically about encryption standards, backup frequency, and what happens to data if they're acquired or shut down.</p>
+
+        <h2>Security best practices on your end</h2>
+
+        <p>Software security is only part of the equation. Common failure points are on the user side:</p>
+
+        <ul>
+          <li><strong>Use unique passwords:</strong> Don't reuse passwords across your construction software, email, and banking. Use a password manager (1Password, Bitwarden) to manage unique passwords for each system.</li>
+          <li><strong>Enable MFA everywhere:</strong> Turn on multi-factor authentication for your construction software, email, and any financial accounts. Email compromise is the most common attack vector.</li>
+          <li><strong>Offboard employees quickly:</strong> When an employee leaves, deactivate their accounts immediately. Don't wait until the next billing cycle.</li>
+          <li><strong>Be cautious about payment instructions by email:</strong> Verify any change to payment instructions (new bank account for a sub, different wire routing number) by phone using a number you already have on file.</li>
+          <li><strong>Keep devices updated:</strong> Construction field workers often delay software updates. Set phones and tablets used for construction software to update automatically.</li>
+        </ul>
+
+        <h2>Questions to ask vendors</h2>
+        <ol>
+          <li>Do you encrypt data in transit and at rest? What standards do you use?</li>
+          <li>Do you maintain SOC 2 Type II certification? Can you share the report?</li>
+          <li>How frequently is data backed up, and how quickly can it be restored?</li>
+          <li>What role-based access controls are available? Can we restrict financial data from field users?</li>
+          <li>Do you offer multi-factor authentication? Can we require it for all users?</li>
+          <li>How do we export our data if we want to leave?</li>
+          <li>What happens to our data if your company is acquired or shuts down?</li>
+          <li>Have you had any data breaches in the last three years? How were they handled?</li>
+        </ol>
+
+        <p>Vendors who are uncomfortable answering these questions — or who give vague non-answers — are telling you something important about how they prioritize security.</p>
+
+        <div class="disclosure">
+          <strong>Affiliate disclosure:</strong> This page contains affiliate links to Buildertrend and Houzz Pro. We may earn a commission if you sign up through our links. <a href="/affiliate-disclosure">Read our full disclosure →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Base>
