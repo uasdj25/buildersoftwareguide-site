@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Construction Software Integrations Guide 2026 — BuilderSoftwareGuide"
+  description="The definitive guide to construction software integrations. How your PM platform, accounting software, and field tools should connect — and what breaks when they don't."
+>
+  <div class="page-header">
+    <div class="container">
+      <div class="prose">
+        <div class="meta">Guide</div>
+        <h1>Construction Software Integrations Guide (2026)</h1>
+        <p>Your tools need to talk to each other. Here's how integrations work, what to prioritize, and what to watch out for.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="prose">
+
+        <div class="verdict">✓ Updated April 2026</div>
+
+        <p>Construction software doesn't work in isolation. Your project management platform needs to connect to your accounting software. Your estimating tool needs to feed your job budget. Your field app needs to sync with your main PM platform. When these integrations work, you eliminate double data entry, reduce errors, and get faster access to accurate information. When they don't, you spend hours reconciling data between systems.</p>
+
+        <p>This guide explains what integrations matter most, how they work, and what to verify before you commit to a software combination.</p>
+
+        <h2>The core integration: PM platform + accounting software</h2>
+        <p>This is the most important integration in your construction software stack. Your project management platform knows what you've bid and contracted. Your accounting software knows what you've paid and received. Without integration, someone manually re-enters data in both places — introducing errors and creating delay.</p>
+
+        <h3>QuickBooks Online integration (most common)</h3>
+        <p>Most construction PM platforms integrate with QuickBooks Online (QBO). The integration typically handles:</p>
+        <ul>
+          <li><strong>Invoice sync:</strong> Invoices created in your PM platform appear in QBO for payment collection</li>
+          <li><strong>Bill sync:</strong> Bills approved in your PM platform appear in QBO for payment processing</li>
+          <li><strong>Customer/vendor sync:</strong> Clients and subs stay in sync between platforms</li>
+          <li><strong>Job sync:</strong> Projects created in your PM platform create corresponding jobs in QBO</li>
+        </ul>
+        <p>Buildertrend's QBO integration is two-way and generally well-regarded, though most users report some manual reconciliation is still needed. JobTread and Houzz Pro also integrate with QBO with similar coverage.</p>
+
+        <h3>QuickBooks Desktop integration</h3>
+        <p>QuickBooks Desktop integration is trickier than QBO — it requires a connector application and is generally less reliable. If you're on QuickBooks Desktop, verify the specific integration mechanics carefully before assuming it works the same as QBO.</p>
+
+        <h3>Sage and Viewpoint integrations</h3>
+        <p>For commercial contractors using Sage 100 Contractor, Sage 300 CRE, or Viewpoint Vista, Procore has the most mature integrations. These are enterprise accounting systems with more complex data structures; the integrations require more setup and often need configuration by a consultant.</p>
+
+        <h2>Estimating to project budget integration</h2>
+        <p>The second most valuable integration: when you win a bid, your estimate should become your job budget automatically. Manual re-entry from your estimate into your job cost system introduces errors and delays. Platforms that handle this well:</p>
+        <ul>
+          <li><strong>Buildertrend Complete:</strong> Estimate line items map to budget categories; accepted bids create the project budget directly</li>
+          <li><strong>JobTread:</strong> Estimate converts to job budget with one action</li>
+          <li><strong>Buildxact:</strong> Takeoff quantities feed estimate; accepted quote creates job with budget</li>
+        </ul>
+
+        <h2>Scheduling software integrations</h2>
+        <p>For commercial GCs using Primavera P6 or Microsoft Project for CPM scheduling, Procore integrates with both to pull schedule data into its platform for distribution and tracking. The schedule is built and maintained in P6 or MS Project; Procore makes it accessible to the project team without requiring P6 licenses for everyone.</p>
+
+        <p>For residential builders, the native Gantt scheduling in Buildertrend or JobTread is usually sufficient without needing a separate scheduling tool integration.</p>
+
+        <h2>Field tool integrations</h2>
+        <p>If you use a dedicated field tool (Fieldwire, Raken) alongside your PM platform, check whether they have a native integration:</p>
+        <ul>
+          <li><strong>Fieldwire + Procore:</strong> Native integration — issues created in Fieldwire can sync to Procore as observations or punch list items</li>
+          <li><strong>Raken + Procore:</strong> Native integration — daily reports from Raken sync to the Procore project record</li>
+          <li><strong>Raken + Buildertrend:</strong> Limited integration — check current status directly with Raken</li>
+        </ul>
+
+        <h2>Common integration problems and how to avoid them</h2>
+
+        <h3>Duplicate records</h3>
+        <p>When both systems create records independently (a customer in your PM platform and a customer in QBO), you get duplicates that cause sync failures. Establish a "source of truth" rule: new clients and projects are always created in one system first, then synced to the other. Never create in both simultaneously.</p>
+
+        <h3>Sync delays</h3>
+        <p>Most integrations aren't real-time — they sync on a schedule (hourly, daily) or on a trigger event. If you approve a bill in your PM platform and immediately check QBO expecting to see it, you may be disappointed. Understand your integration's sync timing before building workflows that depend on real-time data exchange.</p>
+
+        <h3>"Works in theory, breaks in practice"</h3>
+        <p>Integration quality varies significantly from the "integrates with QuickBooks" marketing claim to actual production performance. Before committing, talk to existing users about their integration experience — specifically: what breaks, how often does it need manual intervention, and what happens when data doesn't sync correctly?</p>
+
+        <h2>Integration checklist before choosing software</h2>
+        <ul>
+          <li>☐ Does the PM platform integrate with your accounting software? (QBO, QB Desktop, Sage, etc.)</li>
+          <li>☐ Is the integration two-way or one-way?</li>
+          <li>☐ What data syncs — invoices, bills, customers, vendors, job codes?</li>
+          <li>☐ Is the integration native or requires a third-party connector (like Zapier)?</li>
+          <li>☐ How do conflicts resolve when both systems have different data?</li>
+          <li>☐ Does your estimating tool feed into your PM platform's job budget?</li>
+          <li>☐ If you use field tools separately, do they connect to your PM platform?</li>
+          <li>☐ Does your payroll software connect to your time tracking?</li>
+        </ul>
+
+        <h2>Procore's integration marketplace</h2>
+        <p>Procore's marketplace has 500+ integration partners — the largest in commercial construction. If you're a commercial GC evaluating software, the question isn't "does Procore integrate with X?" but rather "how deep is the integration and how well does it work in practice?" Procore publishes integration details for each partner in its marketplace, including what data flows and in what direction.</p>
+
+        <div class="cta-box">
+          <p><strong>Buildertrend</strong> — Strong QuickBooks integration for residential builders, with a clear ecosystem of supported connections. See what integrates with Buildertrend before committing.</p>
+          <a href="https://www.buildertrend.com" rel="nofollow sponsored" target="_blank" class="btn">Visit Buildertrend →</a>
+        </div>
+
+        <h2>Frequently asked questions</h2>
+
+        <h3>Can I use Zapier to connect construction software that doesn't natively integrate?</h3>
+        <p>Yes — Zapier and Make (formerly Integromat) can connect many platforms that don't have native integrations. The trade-off is complexity and maintenance: Zaps can break when platforms update their APIs, and the data mapping requires careful setup. For mission-critical workflows (like invoice sync), native integrations are more reliable than Zapier workarounds.</p>
+
+        <h3>What if I switch accounting software — do I lose my construction PM data?</h3>
+        <p>Your PM platform's project data (budgets, photos, schedules, documents) stays in the PM platform. The integration creates linked records in both systems. Switching accounting software means re-establishing the integration, not losing your project data. Data migration from one accounting system to another is a separate process that your accountant or a consultant can assist with.</p>
+
+        <h3>Should I choose my PM platform or my accounting software first?</h3>
+        <p>For most contractors: choose the PM platform first, then confirm it integrates with your accounting software. Your PM platform is where you live day-to-day; your accounting software is where your accountant works. The PM platform has more direct operational impact on your team's efficiency.</p>
+
+        <div class="disclosure">
+          Affiliate disclosure: Links to Buildertrend and Houzz Pro are affiliate links. We may earn a commission if you sign up through our link. <a href="/affiliate-disclosure">Full disclosure →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Base>
